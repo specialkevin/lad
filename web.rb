@@ -3,7 +3,7 @@ require 'mongo_mapper'
 require_relative 'models'
 
 get "/" do
-    @links = Link.all
+    @links = Link.all.sort(:datePosted.desc)
     erb :index
 end
 
@@ -19,6 +19,6 @@ get '/user/:user' do
 end
 
 get '/photos' do
-    @links = Link.where(:isPhoto => true)
+    @links = Link.where(:isPhoto => true).sort(:datePosted.desc)
     erb :photos
 end
