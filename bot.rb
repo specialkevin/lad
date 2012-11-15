@@ -10,7 +10,7 @@ bot = Cinch::Bot.new do
     configure do |c|
         c.server = "irc.oftc.net"
         c.nick = "ladbot"
-        c.channels = ["#irlab2"]
+        c.channels = ["#irlab"]
     end
 
     on :message, "hello" do |m|
