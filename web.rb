@@ -3,7 +3,7 @@ require 'mongo_mapper'
 require_relative 'models'
 
 get "/" do
-    @links = Link.all.sort(:datePosted.desc)
+    @links = Link.all(:order => :datePosted.desc)
     erb :index
 end
 
