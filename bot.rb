@@ -37,7 +37,7 @@ bot = Cinch::Bot.new do
                 type = content.content_type
                 if type.include? 'image'
                     link.isPhoto = true
-                    link.create(:photo => open(url).read)
+                    link = Link.create(:photo => open(url).read)
                     puts "is image"
                 else
                     link.isPhoto = false
