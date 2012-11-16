@@ -4,8 +4,8 @@
             <a href="<%= @link.url %>">
                 <img src="<% if @link.photo_id == NIL %>
                     <%= @link.url %>
-                    <% else %>
-                        /<%= @link.id %>
+                    <% else %>/
+                        <%= @link.id %>
                     <% end %>" alt="">
             </a>
         </li>
