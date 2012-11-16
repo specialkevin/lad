@@ -1,6 +1,5 @@
 require 'cinch'
 require 'open-uri'
-require 'joint'
 require 'mongo_mapper'
 require 'tempfile'
 
