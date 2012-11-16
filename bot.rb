@@ -40,7 +40,7 @@ bot = Cinch::Bot.new do
                     link.isPhoto = true
                     tmp = Tempfile.new('tmp')
                     tmp << open(url).read
-                    link.photo = tmp
+                    link.photo = Base64::encode64(tmp.read)
                     puts "is image"
                 else
                     link.isPhoto = false
