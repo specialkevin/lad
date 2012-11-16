@@ -1,7 +1,9 @@
 require 'cinch'
 require 'open-uri'
-
+require 'joint'
 require 'mongo_mapper'
+require 'tempfile'
+
 require_relative 'models'
 
 
@@ -37,7 +39,9 @@ bot = Cinch::Bot.new do
                 type = content.content_type
                 if type.include? 'image'
                     link.isPhoto = true
-                    link = Link.create(:photo => open(url))
+                    tmp = Tempfile.new('tmp')
+                    tmp << open(url).read
+                    link = Link.create(:photo => tmp)
                     puts "is image"
                 else
                     link.isPhoto = false
