@@ -1,4 +1,5 @@
 require 'mongo_mapper'
+require 'joint'
 
 puts ENV['MONGOLAB_URI']
 regex_match = /.*:\/\/(.*):(.*)@(.*):(.*)\//.match(ENV['MONGOLAB_URI'])
@@ -13,8 +14,12 @@ MongoMapper.database.authenticate(db_name, pw)
 
 class Link
     include MongoMapper::Document
+    plugin Joint
+
     key :url, String
     key :datePosted, Time
     key :submitter, String
     key :isPhoto, Boolean
+
+    attachment :photo
 end
