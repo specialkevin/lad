@@ -8,9 +8,9 @@ require_relative 'models'
 bot = Cinch::Bot.new do
 
     configure do |c|
-        c.server = "irc.oftc.net"
-        c.nick = "ladbot"
-        c.channels = ["#irlab"]
+        c.server = ENV["IRC_SERVER"]
+        c.nick = ENV["IRC_NICK"]
+        c.channels = ENV["IRC_CHANNEL"]
     end
 
     on :message, "hello" do |m|
