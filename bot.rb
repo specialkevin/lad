@@ -40,7 +40,7 @@ bot = Cinch::Bot.new do
                     link.isPhoto = true
                     tmp = Tempfile.new('tmp')
                     tmp << open(url).read
-                    link = Link.create(:photo => tmp)
+                    link.photo = tmp
                     puts "is image"
                 else
                     link.isPhoto = false
