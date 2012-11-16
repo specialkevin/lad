@@ -5,9 +5,7 @@
                 <img src="<% if @link.photo_id == NIL %>
                     <%= @link.url %>
                     <% else %>
-                        <%  tmp = TempFile.new('tmp') %>
-                        <% tmp << open(@link.photo).read %>
-                        <%= tmp.path %>
+                        <%= @link.photo %>
                     <% end %>" alt="">
             </a>
         </li>
