@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'mongo_mapper'
+require 'tempfile'
+
 require_relative 'models'
 
 get "/" do
