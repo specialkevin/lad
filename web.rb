@@ -23,3 +23,9 @@ get '/photos' do
     @links = Link.where(:isPhoto => true).sort(:datePosted.desc)
     erb :photos
 end
+
+get '/photo/:id' do |id|
+    link = Link.where(:id => id).first()
+    photo = link.photo
+    [200, {'Content-Type' => photo.content_type}, photo.read]]
+end

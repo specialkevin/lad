@@ -5,7 +5,7 @@
                 <img src="<% if @link.photo_id == NIL %>
                     <%= @link.url %>
                     <% else %>
-                        data:image/png;base64,<%= @link.photo %>
+                        /<%= @link.id %>
                     <% end %>" alt="">
             </a>
         </li>
