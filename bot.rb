@@ -10,7 +10,7 @@ bot = Cinch::Bot.new do
     configure do |c|
         c.server = ENV["IRC_SERVER"]
         c.nick = ENV["IRC_NICK"]
-        c.channels = ENV["IRC_CHANNEL"]
+        c.channels = [ENV["IRC_CHANNEL"]]
     end
 
     on :message, "hello" do |m|
