@@ -22,6 +22,8 @@ SETUP
 
 ```
 git clone git://github.com/specialkevin/lad.git
+heroku create
+heroku heroku addons:add mongolab
 heroku config:add IRC_SERVER=<irc server>
 heroku config:add IRC_CHANNEL=<irc channel>
 heroku config:add IRC_NICK=<irc bot nick>
