@@ -36,5 +36,6 @@ get '/repos' do
     @repos = []
     for repo in links
         @repos << Octokit(repo.url.split('/', 4).last)
+    end
     erb :repos
 end
