@@ -1,11 +1,9 @@
 L.A.D.
 ===
 
-L :: Link 
-A :: Aggregation 
-D :: Display 
+![L.A.D.](http://farm8.static.flickr.com/7175/6414704693_72270d49b0.jpg)
 
-Is a web front-end for a link aggregation bot. This is built using Sinatra, Cinch, Mongomapper and MongoDB. Currently it is designed to be hosted on heroku and can be run for free. You just need to add the mongolab add-on to your heroku app.
+L.A.D. is a link bot with a sexy web front-end for a link aggregation bot. The bot currently will parse out images and Github repos from links to display in seperate tabs.
 
 RQUIREMENTS
 -----------
@@ -35,4 +33,3 @@ FUTURE
 * Add image caching
 * Pull out videos into seperate page
 * Pull out github links into seperate page
-* Make page responsive
