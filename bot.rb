@@ -49,6 +49,7 @@ bot = Cinch::Bot.new do
                     link.isGithubRepo = true
                 else
                     link.isGithubRepo = false
+                end
 
                 link.save
 
