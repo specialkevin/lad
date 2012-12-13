@@ -20,6 +20,7 @@ class Link
     key :datePosted, Time
     key :submitter, String
     key :isPhoto, Boolean
+    key :isGithubRepo, Boolean
 
     attachment :photo
 end

@@ -45,6 +45,12 @@ bot = Cinch::Bot.new do
                 else
                     link.isPhoto = false
                 end
+                if url.include? 'https://github.com/'
+                    link.isGithubRepo = true
+                else
+                    link.isGithubRepo = false
+                end
+
                 link.save
 
             end
