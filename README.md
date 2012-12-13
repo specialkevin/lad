@@ -3,7 +3,7 @@ L.A.D.
 
 ![L.A.D.](http://farm8.static.flickr.com/7175/6414704693_72270d49b0.jpg)
 
-L.A.D. is a link bot with a sexy web front-end for a link aggregation bot. The bot currently will parse out images and Github repos from links to display in seperate tabs.
+L.A.D. is an IRC link bot with a sexy web front-end. The bot currently will disply all links posted in a channel and parse out images and Github repos from links to display in seperate tabs.
 
 RQUIREMENTS
 -----------
