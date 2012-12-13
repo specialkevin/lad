@@ -35,7 +35,7 @@ get '/repos' do
     links = Link.where(:isGithubRepo => true).sort(:datePosted.desc)
     @repos = []
     for repo in links
-        @repos << Octokit(repo.url.split('/', 4).last)
+        @repos << Octokit.repo(repo.url.split('/', 4).last)
     end
     erb :repos
 end
