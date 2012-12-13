@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'mongo_mapper'
+require 'octokit'
 
 require_relative 'models'
 
@@ -31,6 +32,9 @@ get '/photo/:id' do |id|
 end
 
 get '/repos' do
-    @links = Link.where(:isGithubRepo => true).sort(:datePosted.desc)
-    erb :index
+    links = Link.where(:isGithubRepo => true).sort(:datePosted.desc)
+    @repos = []
+    for repo in links
+        @repos << Octokit(repo.url.split('/', 4).last)
+    erb :repos
 end
