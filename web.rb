@@ -29,3 +29,8 @@ get '/photo/:id' do |id|
     photo = link.photo
     [200, {'Content-Type' => photo.content_type}, [photo.read]]
 end
+
+get '/repos' do
+    @links = Link.where(:isGithubRepo => true).sort(:datePosted.desc)
+    erb :index
+end

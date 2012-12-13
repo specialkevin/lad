@@ -47,6 +47,8 @@ bot = Cinch::Bot.new do
                 end
                 if url.include? 'https://github.com/'
                     link.isGithubRepo = true
+                else
+                    link.isGithubRepo = false
 
                 link.save
 
