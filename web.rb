@@ -39,3 +39,8 @@ get '/repos' do
     end
     erb :repos
 end
+
+get '/videos' do
+    @links = Link.where(:isVideo => true).sort(:datePosted.desc)
+    erb :index
+end
