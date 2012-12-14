@@ -21,6 +21,7 @@ class Link
     key :submitter, String
     key :isPhoto, Boolean
     key :isGithubRepo, Boolean
+    key :isVideo, Boolean
 
     attachment :photo
 end
