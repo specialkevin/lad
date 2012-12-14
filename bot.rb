@@ -52,7 +52,7 @@ bot = Cinch::Bot.new do
                     link.isGithubRepo = false
                 end
 
-                if url.include? 'www.youtube.com' or url.include? 'www.vimeo.com'
+                if url.include? 'www.youtube.com' or url.include? 'vimeo.com'
                     link.isVideo = true
                 else
                     link.isVideo = false
