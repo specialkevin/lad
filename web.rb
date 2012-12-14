@@ -44,7 +44,7 @@ end
 get '/videos' do
     links = Link.where(:isVideo => true).sort(:datePosted.desc)
     @videos = []
-    for video in videos
+    for video in links
         @videos << VideoInfo.get(video.url)
     end
     erb :videos
