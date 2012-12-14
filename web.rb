@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'mongo_mapper'
 require 'octokit'
+require 'video_info' 
 
 require_relative 'models'
 
@@ -41,6 +42,10 @@ get '/repos' do
 end
 
 get '/videos' do
-    @links = Link.where(:isVideo => true).sort(:datePosted.desc)
-    erb :index
+    links = Link.where(:isVideo => true).sort(:datePosted.desc)
+    @videos = []
+    for video in links
+        @videos << VideoInfo.get(video.url)
+    end
+    erb :videos
 end
