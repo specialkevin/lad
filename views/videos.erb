@@ -12,7 +12,7 @@
                     <a href="<%= @video.embed_url %>"><%= @video.title %></a>
                 </td>
                 <td>
-                    <%= @video.description %>
+                    <%= truncate(@video.description, 100, '...') %>
                 </td>
             </tr>
         <% end %>
