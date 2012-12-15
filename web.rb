@@ -6,7 +6,7 @@ require 'video_info'
 require_relative 'models'
 
 get "/" do
-    @links = Link.where(:isPhoto => false).sort(:datePosted.desc)
+    @links = Link.where(:isPhoto => false, :isGithubRepo => false, :isVideo => false).sort(:datePosted.desc)
     erb :index
 end
 
