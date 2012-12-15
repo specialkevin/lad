@@ -66,7 +66,7 @@ bot = Cinch::Bot.new do
                     url = image["data"]["link"]
                     link.url = url
                     tmp = Tempfile.new("tmp")
-                    tmp << open(url)
+                    tmp << open(url).read
                     link.photo = tmp
                 end
 
