@@ -4,6 +4,7 @@ require 'mongo_mapper'
 require 'tempfile'
 
 require_relative 'models'
+require_relative 'imgur'
 
 
 bot = Cinch::Bot.new do
@@ -56,6 +57,17 @@ bot = Cinch::Bot.new do
                     link.isVideo = true
                 else
                     link.isVideo = false
+                end
+
+                if url.include? 'http://imgur.com'
+                    imgur = Imgur.new
+                    image = imgur.image(url.split('/').last)
+                    link.isPhoto = true
+                    url = image["data"]["link"]
+                    link.url = url
+                    tmp = Tempfile.new("tmp")
+                    tmp << open(url).read
+                    link.photo = tmp
                 end
 
                 link.save
