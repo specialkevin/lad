@@ -55,6 +55,13 @@ bot = Cinch::Bot.new do
 
                 if url.include? 'www.youtube.com' or url.include? 'vimeo.com'
                     link.isVideo = true
+                    if url.include? 'www.youtube.com' and url.include? '/embed/'
+                        video_id = url.split('/').last
+                        link.url = 'http://www.youtube.com/watch?v='+video_id
+                    else if url.include? 'www.youtube.com' and url.include? '?feature=player_embedded&'
+                        link.url.tap{|s| s.slice!("feature=player_embedded&")}
+                    else
+                        link.url = url
                 else
                     link.isVideo = false
                 end
