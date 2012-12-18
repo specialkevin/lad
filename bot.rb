@@ -62,6 +62,7 @@ bot = Cinch::Bot.new do
                         link.url.tap{|s| s.slice!("feature=player_embedded&")}
                     else
                         link.url = url
+                    end
                 else
                     link.isVideo = false
                 end
