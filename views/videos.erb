@@ -12,11 +12,11 @@
                     <a href="<%= @video.embed_url %>"><%= @video.title %></a>
                 </td>
                 <td>
-                    <%= if @video.description.nil? %>
+                    <% if @video.description.nil? %>
                         No description provided.
-                    <%= else %>
+                    <% else %>
                         <%= @video.description.slice(0..100) + "..." %>
-                    <%= end %>
+                    <% end %>
                 </td>
             </tr>
         <% end %>
