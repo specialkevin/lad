@@ -36,6 +36,7 @@ GEM
     multi_json (1.3.7)
     multi_xml (0.5.1)
     multipart-post (1.1.5)
+    newrelic_rpm (3.6.1.87)
     octokit (1.19.0)
       addressable (~> 2.2)
       faraday (~> 0.8)
@@ -71,6 +72,7 @@ DEPENDENCIES
   httparty
   joint
   mongo_mapper
+  newrelic_rpm
   octokit
   sinatra
   thin
